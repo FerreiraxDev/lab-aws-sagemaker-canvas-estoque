@@ -14,7 +14,7 @@
 
 - #### Meu dataset foi gerado através do generativo Chat-GPT, disponibilizado na pasta 'dataset', com as seguintes intruções:
 
-![dataset-gpt](image.png)
+![dataset-gpt](image.PNG)
 
 ### ☁️ SageMaker
 
