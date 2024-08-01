@@ -1,47 +1,56 @@
-# 📊 Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
+# Previsão de Estoque inteligente com SageMakers Canvas 🤖
 
-Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning (ML). Siga os passos abaixo para completar o desafio!
+## Bootcamp Nexa - Machine Learning - DIO.
 
-## 📋 Pré-requisitos
+## 📖 Resumo
 
-Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda para criar sua conta, confira nosso repositório [AWS Cloud Quickstart](https://github.com/digitalinnovationone/aws-cloud-quickstart).
+### O projeto final do bootcamp é utilizar um dataset para criar uma previsão de estoque inteligente baseando-se em Machine Learning No-Code através do SageMakers Canvas, da Amazon Web Service
 
+![SageMaker](https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2023/11/16/AWS_Juxtaposer_Thumbnail_FINAL.png)
 
-## 🎯 Objetivos Deste Desafio de Projeto (Lab)
+## 🎯 Passo a Passo
 
-![image](https://github.com/digitalinnovationone/lab-aws-sagemaker-canvas-estoque/assets/730492/72f5c21f-5562-491e-aa42-2885a3184650)
+### 📃 DATASET
 
-- Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para uma "Previsão de Estoque Inteligente".
-- Para isso, siga o [passo a passo] descrito a seguir e evolua as suas habilidades em ML no-code com o Amazon SageMaker Canvas.
-- Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
+- #### Meu dataset foi gerado através do generativo Chat-GPT, disponibilizado na pasta 'dataset', com as seguintes intruções:
 
+![dataset-gpt](image.png)
 
-## 🚀 Passo a Passo
+### ☁️ SageMaker
 
-### 1. Selecionar Dataset
+- #### Fiz o upload do arquivo gerado pelo Chat-GPT e selecionei _Predective Analysis_ como meu _Problem type_, sendo ele direcionado a predizer meu estoque com base no histórico do arquivo CSV.
 
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
+![SageMaker-new-model](image-2.png)
 
-### 2. Construir/Treinar
+- #### Em _Select a column to predict_, selecionei a coluna ESTOQUE, a qual quero uma predição dos dados.
 
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
+###### 🛎️ Há um aviso para a coluna PRECO. Segundo ao próprio SageMaker, é porque não há valores reais para os dias futuros onde serão feitas as predições, então decidi que ele trabalhará com a mediana entre os valores prescristos no arquivo CSV para finalização do projeto.
 
-### 3. Analisar
+![SageMaker-predict](image-1.png)
 
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
+- #### Em _Configure Model_, selecionei a coluna ID_PRODUTOS para identificar os itens da coluna ESTOQUE. Enquanto a coluna DIA será o período em que ocorreu as ações do arquivo. Fiz uma previsão de até 3 dias.
 
-### 4. Prever
+![SageMaker-configure-model](image-3.png)
 
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
+- #### Há possibilidade de criar gráficos através do _Data Visualizer_
 
-## 🤔 Dúvidas?
+![alt text](image-4.png)
 
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
+## 📊 Final!
+
+#### 🛎️ Não consegui exatamente gerar uma predição geral dos dados do arquivo CSV por conta de limite da plaforma AWS, mas é possível visualizar predições específicas para cada item na aba _Single Prediction_. :)
+
+- Item 12
+  ![item-12](image-8.png)
+- Item 11
+  ![item-11](image-10.png)
+- Item 10
+  ![item-10t](image-9.png)
+
+- #### Mensagem sobre o limite:
+  ![alt text](image-7.png)
+
+### Tecnologias utilizadas (e seu links):
+
+[![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)](https://chat.openai.com/)
+[![AWS](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/pt/free/?)
